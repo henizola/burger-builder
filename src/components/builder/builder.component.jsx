@@ -2,15 +2,18 @@ import React from 'react';
 import './builder.styles.scss'
 import Preview from '../preview/preview.comopnents'
 
-const Builder=({changeHandler,bacon,beff,cheese,salad,subteructHandler})=>{
+const Builder=({changeHandler,bacon,beff,cheese,salad,subteructHandler,price})=>{
         return(
             <div className='container'>
                 <div className='view'>
-                        <Preview breadTop={true} className='top'/>   
+                        <Preview breadTop={true} className='top'/>  
+                        {
+                            bacon?'':beff?'':cheese?'':salad?'':<h1>use the constructor below</h1>
+                        } 
                         <Preview bacon={bacon} beff={beff} cheese={cheese} salad={salad}/>
                         <Preview breadBottom={true}  className='bottom'/>
                 </div>
-                    <div className='price'>total= $</div>
+                    <div className='price'>total= ${price}</div>
                 <div className='builder'>
                     <div className='item'>
                         <div className='the-item'>
@@ -38,8 +41,8 @@ const Builder=({changeHandler,bacon,beff,cheese,salad,subteructHandler})=>{
                         <div className='the-item'>
                         <Preview salad={true} className='beff'/> 
                          </div>
-                     <button className='button' onClick={()=>changeHandler(4)}>+</button>
-                     <button className='button'  onClick={()=>subteructHandler(4)}>-</button>
+                     <button onClick={()=>changeHandler(4)}>+</button>
+                     <button  onClick={()=>subteructHandler(4)}>-</button>
                     </div>
                   </div>
                  </div>
@@ -48,3 +51,8 @@ const Builder=({changeHandler,bacon,beff,cheese,salad,subteructHandler})=>{
 }
 export default Builder;
 
+
+
+
+
+                

@@ -9,7 +9,7 @@
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    margin:90px auto;
+    margin: auto;
 
     
     .builder{
@@ -30,12 +30,13 @@
                         height:25px
                     }
                 }
-                .button{
+                button{
                     margin-right: 5px;
                     border-radius: 100%;
                     background-color: darkslateblue;
                     height:25px;
                     width:25px;
+                    box-shadow: 0px 0px 0px 0px;
                 }
             
         }
