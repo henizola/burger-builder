@@ -1,24 +1,21 @@
 import React from 'react';
 import './App.css';
 import BurgerBuilder from './components/burger-builder/burger-builder.component'
-import {Route} from 'react-router-dom'
+import {Route,Redirect} from 'react-router-dom'
 import NavBar from './components/navbar/nav-bar.components'
 import SignIn from './components/sign-in/sign-in.components'
 import {auth,createUserProfileDocument} from './firebase/firebase.utils'
+import {connect} from 'react-redux';
+import {setCurrentUser} from './redux/user/user.action';
 class App extends React.Component {
 
-  constructor(){
-    super();
-     
-    this.state={
-        currentUser:null
-    }
-  }
+
   unsubscribeFromAuth=null;
   
   componentDidMount(){
+    const {setCurrentUser}=this.props;
      this.unsubscribeFromAuth= auth.onAuthStateChanged(async user=>{
-        this.setState({currentUser:user});
+      setCurrentUser(user);
         console.log(user);
         createUserProfileDocument(user);
       })
@@ -32,9 +29,9 @@ class App extends React.Component {
   render()
   { return (
     <div>
-      <NavBar user={this.state.currentUser}/>
-    <Route exact path='/home' component={BurgerBuilder}/> 
-    <Route exact path='/sign-in' component={SignIn}/>
+      <NavBar />
+      <Route exact path='/' component={BurgerBuilder}/> 
+  <Route exact path='/sign-in' render={()=>this.props.currentUser? <Redirect to='/'/>: <SignIn/>}/>
     </div>
    
   
@@ -43,4 +40,13 @@ class App extends React.Component {
   
 }
 
-export default App;
+
+const mapStateToProps=state=>({
+  currentUser:state.user.currentUser
+})
+
+const mapDispatchToProps=dispatch=>({
+  setCurrentUser:user=>dispatch(setCurrentUser(user))
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);

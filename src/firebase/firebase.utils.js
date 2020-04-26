@@ -18,7 +18,7 @@ const config={
     if (!userAuth) return;
     const userRef=firestore.doc(`users/${userAuth.uid}`);
     const snap= await userRef.get();
-    console.log(snap)
+    // console.log(snap)
 
     if(!snap.exists){
       const {displayName,email}=userAuth;
