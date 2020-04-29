@@ -16,8 +16,7 @@ class App extends React.Component {
     const {setCurrentUser}=this.props;
      this.unsubscribeFromAuth= auth.onAuthStateChanged(async user=>{
       setCurrentUser(user);
-        console.log(user);
-        createUserProfileDocument(user);
+      createUserProfileDocument(user);
       })
   }
 
@@ -31,13 +30,10 @@ class App extends React.Component {
     <div>
       <NavBar />
       <Route exact path='/' component={BurgerBuilder}/> 
-  <Route exact path='/sign-in' render={()=>this.props.currentUser? <Redirect to='/'/>: <SignIn/>}/>
+      <Route exact path='/sign-in' render={()=>this.props.currentUser? <Redirect to='/'/>: <SignIn/>}/>
     </div>
-   
-  
-    );
+  );
   }
-  
 }
 
 

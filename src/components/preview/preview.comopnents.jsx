@@ -1,19 +1,25 @@
 import React from 'react';
-// import '../builder/burger-builder.styles.css';
 import './preview.styles.scss'
+import {connect} from 'react-redux'
 
 
-const Preview =({salad,cheese,beff,bacon,breadTop,breadBottom,egg})=>{
+const Preview =({userChoice})=>{
+   
     return(
         <div>
-        {breadTop ? <div className='bread-top'/> : ''}
-        {salad?<div className='salad'/>:''}
-        {bacon?<div className='bacon'/>:''}
-        {egg?<div className='egg'/>:''}
-        {beff ? <div className='beff'/> :''}
-        {cheese ?<div className='cheese'/>:''}
-        {breadBottom ? <div className='bread-bottom'/> : ''}
-         </div> 
+            <div className='bread-top'/> 
+                {
+                    userChoice.length?
+                     userChoice.map(element=>element.quantity?<div className={`${element.name}`}>{element.quantity}</div>:'')
+                     :<h1>no Items</h1>
+                }
+            <div className='bread-bottom'/> 
+        </div> 
     );
 }
-export default Preview;
+
+const mapStateToProps=state=>({
+    userChoice:state.builder.userChoice
+})
+
+export default connect (mapStateToProps) (Preview);
