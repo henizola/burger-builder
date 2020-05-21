@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/henizola/burger-builder/static/css/main.bac21eaa.chunk.css",
+    "main.js": "/henizola/burger-builder/static/js/main.9315053c.chunk.js",
+    "main.js.map": "/henizola/burger-builder/static/js/main.9315053c.chunk.js.map",
+    "runtime-main.js": "/henizola/burger-builder/static/js/runtime-main.f5a86dc3.js",
+    "runtime-main.js.map": "/henizola/burger-builder/static/js/runtime-main.f5a86dc3.js.map",
+    "static/js/2.b0045bb7.chunk.js": "/henizola/burger-builder/static/js/2.b0045bb7.chunk.js",
+    "static/js/2.b0045bb7.chunk.js.map": "/henizola/burger-builder/static/js/2.b0045bb7.chunk.js.map",
+    "index.html": "/henizola/burger-builder/index.html",
+    "precache-manifest.426b6f20621f40bead003c5046ab6960.js": "/henizola/burger-builder/precache-manifest.426b6f20621f40bead003c5046ab6960.js",
+    "service-worker.js": "/henizola/burger-builder/service-worker.js",
+    "static/css/main.bac21eaa.chunk.css.map": "/henizola/burger-builder/static/css/main.bac21eaa.chunk.css.map",
+    "static/js/2.b0045bb7.chunk.js.LICENSE.txt": "/henizola/burger-builder/static/js/2.b0045bb7.chunk.js.LICENSE.txt",
+    "static/media/1531643.c7fd13ad.svg": "/henizola/burger-builder/static/media/1531643.c7fd13ad.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f5a86dc3.js",
+    "static/js/2.b0045bb7.chunk.js",
+    "static/css/main.bac21eaa.chunk.css",
+    "static/js/main.9315053c.chunk.js"
+  ]
+}
