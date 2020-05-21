@@ -7,7 +7,7 @@ const Builder = () => {
   return (
     <BuilderContext.Consumer>
       {(context) => (
-        <div className="builder">
+        <div className="build">
           {context.items.map((element) => (
             <Buttons key={element.id} item={element} />
           ))}

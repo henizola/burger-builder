@@ -1,21 +1,19 @@
-.containers{
-    
-    height:470px;
-    margin: auto;
-    width:70%;
-    .preview{
-        height:40%; 
-        text-align: center;
-        width:50%;
-        margin: 45px auto;
-    }
-    .builder{
-        width: 80%;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-left: 10%;
-        
-    }
+.containers {
+  height: 470px;
+  margin: auto;
+  width: 70%;
+  .preview {
+    height: 40%;
+    text-align: center;
+    width: 50%;
+    margin: 45px auto;
+  }
+  .builder {
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10%;
+  }
 }

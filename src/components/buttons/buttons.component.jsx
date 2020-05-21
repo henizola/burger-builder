@@ -6,13 +6,12 @@ const Buttons = ({ item }) => {
     <BuilderContext.Consumer>
       {(context) => (
         <div className="select">
-          <div className={`${item.name} pic `} />
-          <div> </div>
+          <span className="title">{item.name}</span>
           <button name={item.name} onClick={context.addItem}>
-            more
+            More
           </button>
           <button name={item.name} onClick={context.removeItem}>
-            less
+            Less
           </button>
         </div>
       )}

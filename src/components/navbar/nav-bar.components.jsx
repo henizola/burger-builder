@@ -15,13 +15,10 @@ const NavBar = () => {
       auth.onAuthStateChanged(async (user) => {
         setCurrentUser(user);
         createUserProfileDocument(user);
-        console.log(user);
       })
     );
-    console.log("here");
   }, [unsubscribeFromAuth]);
 
-  console.log(currentUser);
   return (
     <nav>
       <Link to="/">

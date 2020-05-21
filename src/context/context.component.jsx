@@ -30,7 +30,6 @@ export class BuilderProvider extends React.Component {
       this.setState({ userChoice: [...choice] });
     } else {
       ingridentToAdd.quantity = 1;
-      console.log(this.state.userChoice);
       this.setState({ userChoice: [...choice, ingridentToAdd] });
     }
   };
