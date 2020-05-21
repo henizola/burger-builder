@@ -1,8 +1,15 @@
 form {
   width: 60%;
-  margin: auto 30px;
+  margin: auto;
 }
 .buttons {
   display: flex;
   flex-direction: row;
+}
+@media (max-width: 380px) {
+  form {
+    width: 600px;
+    margin: auto;
+    margin-left: 10px;
+  }
 }

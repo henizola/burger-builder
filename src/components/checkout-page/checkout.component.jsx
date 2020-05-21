@@ -15,12 +15,16 @@ const CheckOut = (props) => {
     <BuilderContext.Consumer>
       {(context) => (
         <Container>
-          <button
-            onClick={() => props.history.push("/")}
-            style={{ margin: "auto" }}
-          >
-            Home
-          </button>
+          <div style={{ margin: "auto" }}>
+            <button onClick={() => props.history.push("/")}>Home</button>
+            <button
+              onClick={() => props.history.push("/order")}
+              style={{ marginLeft: "50px" }}
+            >
+              Order
+            </button>
+          </div>
+
           <CheckoutContainer>
             <ViewContainer>
               <Preview />

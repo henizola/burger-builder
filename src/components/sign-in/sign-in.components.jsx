@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Form from "../form/form.component";
 import CustomButton from "../custom-button/custom-button.component";
 import "./signin.styles.scss";
-import { signInWithGoogle } from "../../firebase/firebase.utils";
-const SignIn = () => {
+const SignIn = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,6 +11,11 @@ const SignIn = () => {
       setEmail(event.target.value);
     } else {
       setPassword(event.target.value);
+    }
+  };
+  const handleClick = () => {
+    if (email !== "" && password !== "") {
+      props.history.push("/home");
     }
   };
 
@@ -32,10 +36,7 @@ const SignIn = () => {
         handleChange={handleChange}
       />
       <div className="buttons">
-        <CustomButton>signin</CustomButton>
-        <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-          Google-Signin
-        </CustomButton>
+        <CustomButton onClick={handleClick}>signin</CustomButton>
       </div>
     </form>
   );

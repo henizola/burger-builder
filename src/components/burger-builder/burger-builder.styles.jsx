@@ -25,5 +25,5 @@ export const Price = styled.span`
   color: white;
   font-size: 45px;
   margin: auto;
-  margin-top: -35px;
+  margin-top: -25px;
 `;
