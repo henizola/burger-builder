@@ -1,12 +1,12 @@
 import React from "react";
-import "./preview.styles.scss";
 import { BuilderContext } from "../../context/context.component";
-
+import { ItemContainer } from "./preview.styles";
+import "./preview.styles.scss";
 const Preview = () => {
   return (
     <BuilderContext.Consumer>
       {(context) => (
-        <div>
+        <ItemContainer>
           <div className="bread-top" />
 
           {context.userChoice.length ? (
@@ -14,15 +14,24 @@ const Preview = () => {
               !element.quantity ? (
                 console.log(element)
               ) : (
-                <div className={`${element.name}`}>{element.quantity}</div>
+                <div className={`${element.name}`}>
+                  <span
+                    style={{
+                      marginLeft: "45%",
+                      color: "White",
+                    }}
+                  >
+                    {element.quantity}
+                  </span>
+                </div>
               )
             )
           ) : (
-            <h1>no items</h1>
+            <h1 style={{ margin: "auto", marginLeft: "30%" }}>No Items</h1>
           )}
 
           <div className="bread-bottom" />
-        </div>
+        </ItemContainer>
       )}
     </BuilderContext.Consumer>
   );

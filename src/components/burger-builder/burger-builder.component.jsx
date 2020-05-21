@@ -1,27 +1,31 @@
 import React from "react";
 import Builder from "../builder/builder.component";
 import Preview from "../preview/preview.comopnents";
-import "./builder.styles.scss";
 import { BuilderContext } from "../../context/context.component";
-const BurgerBuilder = ({ price }) => {
+import {
+  Container,
+  PreviewContainer,
+  BuilderContainer,
+  Price,
+} from "./burger-builder.styles";
+const BurgerBuilder = (props) => {
   return (
     <BuilderContext.Consumer>
       {(context) => (
-        <div className="containers">
-          <div className="preview">
-            <div className="burger">
-              <Preview />
-            </div>
-            <div
-              style={{ marginTop: "10px", color: "white", fontSize: "larger" }}
-            >
-              {context.price}
-            </div>
-          </div>
-          <div className="builder">
+        <Container>
+          <PreviewContainer>
+            <Preview />
+            <Price>
+              $ {context.price}{" "}
+              <button onClick={() => props.history.push("/checkout")}>
+                checkout
+              </button>
+            </Price>
+          </PreviewContainer>
+          <BuilderContainer>
             <Builder />
-          </div>
-        </div>
+          </BuilderContainer>
+        </Container>
       )}
     </BuilderContext.Consumer>
   );

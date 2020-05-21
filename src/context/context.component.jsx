@@ -59,6 +59,11 @@ export class BuilderProvider extends React.Component {
     }, 0);
     return price;
   };
+
+  setDeault = () => {
+    // if (this.state.userChoice.length > 0) this.setState({ userChoice: [] });
+    console.log("got her");
+  };
   render() {
     return (
       <BuilderContext.Provider
@@ -68,6 +73,7 @@ export class BuilderProvider extends React.Component {
           removeItem: this.removeItem,
           userChoice: this.state.userChoice,
           price: this.getPrice(),
+          setDeault: this.setDeault,
         }}
       >
         {this.props.children}
