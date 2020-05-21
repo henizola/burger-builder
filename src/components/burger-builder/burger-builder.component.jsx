@@ -2,7 +2,6 @@ import React from "react";
 import Builder from "../builder/builder.component";
 import Preview from "../preview/preview.comopnents";
 import "./builder.styles.scss";
-import { connect } from "react-redux";
 import { BuilderContext } from "../../context/context.component";
 const BurgerBuilder = ({ price }) => {
   return (
@@ -27,10 +26,5 @@ const BurgerBuilder = ({ price }) => {
     </BuilderContext.Consumer>
   );
 };
-const mapStateToProps = (state) => ({
-  price: state.builder.userChoice.reduce(
-    (acc, value) => acc + value.quantity * value.price,
-    0
-  ),
-});
-export default connect(mapStateToProps)(BurgerBuilder);
+
+export default BurgerBuilder;

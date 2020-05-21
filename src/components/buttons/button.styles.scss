@@ -1,20 +1,17 @@
-
-
-.select{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width:50%;
-    margin: auto;
-    margin-top: 10px;
-   
-    }
-    button{
-        border-radius: 5px;
-        opacity: 0.5;
-        height:25px;
-        justify-content: center;
-        &:hover{
-            opacity: 1;
-        }
-    }
+.select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 10%;
+  margin: auto;
+  margin-top: 10px;
+}
+button {
+  border-radius: 5px;
+  opacity: 0.5;
+  height: 45px;
+  justify-content: center;
+  &:hover {
+    opacity: 1;
+  }
+}

@@ -13,19 +13,16 @@ $main-color: black;
 
   .form-input {
     background: none;
-    background-color: white;
-    color: $sub-color;
+    background-color: transparent;
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
-    width: 100%;
+    width: 50%;
     border: none;
     border-radius: 0;
-    border-bottom: 1px solid $sub-color;
+    border-bottom: 2px solid black;
     margin: 25px 0;
-    height:10px;
-    border: none;
-    opacity: 0.5;
+    height: 10px;
     text-underline-position: auto;
     &:focus {
       outline: none;
@@ -36,12 +33,12 @@ $main-color: black;
     }
   }
 
-  input[type='password'] {
+  input[type="password"] {
     letter-spacing: 0.3em;
   }
 
   .form-input-label {
-    color: $sub-color;
+    color: black;
     font-size: 16px;
     font-weight: normal;
     position: absolute;
@@ -54,11 +51,4 @@ $main-color: black;
       @include shrinkLabel();
     }
   }
-}
-
-.gg
-{
-  top: -14px;
-  font-size: 12px;
-  color: $main-color;
 }

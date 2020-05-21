@@ -1,9 +1,8 @@
 import React from "react";
 import "./preview.styles.scss";
-import { connect } from "react-redux";
 import { BuilderContext } from "../../context/context.component";
 
-const Preview = ({ userChoice }) => {
+const Preview = () => {
   return (
     <BuilderContext.Consumer>
       {(context) => (
@@ -29,8 +28,4 @@ const Preview = ({ userChoice }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  userChoice: state.builder.userChoice,
-});
-
-export default connect(mapStateToProps)(Preview);
+export default Preview;

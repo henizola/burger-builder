@@ -1,6 +1,5 @@
 import React from "react";
 import "./builder.styles.scss";
-import { connect } from "react-redux";
 import Buttons from "../buttons/buttons.component";
 import { BuilderContext } from "../../context/context.component";
 
@@ -17,8 +16,5 @@ const Builder = () => {
     </BuilderContext.Consumer>
   );
 };
-const mapStateToProps = (state) => ({
-  items: state.builder.items,
-});
 
-export default connect(mapStateToProps)(Builder);
+export default Builder;
