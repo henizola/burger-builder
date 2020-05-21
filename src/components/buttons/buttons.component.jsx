@@ -1,31 +1,23 @@
-import React from 'react';
-import {connect} from 'react-redux'; 
-import {addItem,removeItem} from '../../redux/builder/builder.action';
-import './button.styles.scss'
-const Buttons=({item,addItem,removeItem})=>{
+import React from "react";
+import "./button.styles.scss";
+import { BuilderContext } from "../../context/context.component";
+const Buttons = ({ item }) => {
+  return (
+    <BuilderContext.Consumer>
+      {(context) => (
+        <div className="select">
+          <div className={`${item.name} pic `} />
+          <div> </div>
+          <button name={item.name} onClick={context.addItem}>
+            more
+          </button>
+          <button name={item.name} onClick={context.removeItem}>
+            less
+          </button>
+        </div>
+      )}
+    </BuilderContext.Consumer>
+  );
+};
 
-   const handleAdd=()=>{
-    addItem(item)
-    }
-    const handleRemove=()=>{
-        removeItem(item)
-        }
-return(
-    <div className='select'>
-        <div className={`${item.name} pic `}/>
-        <div> </div>
-         <button onClick={handleAdd}>more</button>
-         <button onClick={handleRemove}>less</button>
-    </div>
-  
-)
-}
-
-const mapDispatchToProps=dispatch=>({
-    addItem:item=>dispatch(addItem(item)),
-    removeItem:item=>dispatch(removeItem(item))
-})
-
-
-
-export default connect (null,mapDispatchToProps)(Buttons)
+export default Buttons;
