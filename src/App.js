@@ -9,7 +9,7 @@ import CheckOut from "./components/checkout-page/checkout.component";
 const App = () => {
   return (
     <BuilderProvider>
-      <NavBar />
+      <Route path="/" component={NavBar} />
       <Route exact path="/" component={SignIn} />
       <Route exact path="/home" component={BurgerBuilder} />
       <Route path="/checkout" component={CheckOut} />
